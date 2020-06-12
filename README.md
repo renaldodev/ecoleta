@@ -1,2 +1,0 @@
-# ecoleta
-Created with CodeSandbox

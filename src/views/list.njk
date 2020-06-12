@@ -1,0 +1,55 @@
+{% extends 'layout.njk' %}
+
+{% set bodyId = "page-list" %}
+
+{% block content %}
+    <div id="page-list">
+
+        <div class="container">
+
+            <header>   
+                    <div class="links">
+                    <img src="./assets/logo.svg" alt="logo ecoleta">
+                    <span>
+                        <img src="./assets/arrow-left.svg" alt="">
+                        <a href="/"> Voltar para home</a>
+                    </span>
+                </div>
+            </header>
+
+            <div class="secundary_background"></div>
+
+            {% if total>0 %}
+                <p><strong>{{total}} pontos</strong> encontrados</p>
+
+                <div class="cards-list">
+                    {% for place in places %}
+                    
+                        <div class="card-items">
+                            <img src="{{place.image}}" alt="{{place.name}}">
+                            <h1>{{place.name}}</h1>
+                            <h3>{{place.items}}</h3>
+                            <p> 
+                                {{place.city}}, {{place.state}}
+                                <br/>
+                                {{place.address}}
+                                <br/>
+                                {{place.address2}}
+                            </p>
+                        </div>
+
+                    {% endfor %}
+                </div>
+
+            {%else%}
+
+                <p><strong>Nenhum</strong> local encontrado</p>
+
+            {% endif %}
+
+            
+        
+        </div> 
+    
+    </div>   
+{% endblock %}
